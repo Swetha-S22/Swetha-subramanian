@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+.back {
+  background-color: #e5ccff;
+  color: black  ;
+  border: 2px solid black;
+  margin: 20px;
+  padding: 20px;
+}
+</style>
+
+    <title>Swetha Subramanian</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Swetha Subramanian</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="#">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        
+      </ul>
+      <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">About me</a>
+  </li>
+</ul>
+    </div>
+  </div>
+</nav>
+    <h1>Bandit Level 6 → Level 7</h1>
+
+    <hr>
+   
+
+  
+    <section class="container centered">
+      <h3>Level Goal</h3>
+      <a href="http://overthewire.org/wargames/bandit/bandit7.html" target="_blank">http://overthewire.org/wargames/bandit/bandit7.html</a><br><br>
+     <p> The password for the next level is stored somewhere on the server and has all of the following properties:</p>
+<p >  &nbsp;  &nbsp;  &nbsp;  &nbsp;human-readable</p>
+<p >&nbsp;  &nbsp;  &nbsp;  &nbsp;owned by group bandit6</p>
+<p >&nbsp;  &nbsp;  &nbsp;  &nbsp;33 bytes in size</p>
+
+     <h4 > Steps</h4><ul>
+    
+<li>find / -user bandit7 -group bandit6 -size 33c 2> /dev/null
+</li>
+<li>cat /var/lib/dpkg/info/bandit7.password
+ </li>
+<li>When a command line is run it generates two outputs : output and error</li>
+<li>output goes to :stdout and Error goes to : stderr</li>
+<li>Both stdout (1) and stderr ( 2) have a specific file descriptor. Using it we can redirect the stdout and stderr to other files.
+</li>
+<li> /dev/null : redirect standard error messages to /dev/null (to send permission denied errors).Since it is not an executable file cannot use piping | to redirect. Have to use > or >>, <code><</code>or <code><<</code>
+
+</li>
+</ul>
+<div class="back"> 
+  <p><b>Commands Used</b></p>
+  <ul><li>find / -user bandit7 -group bandit6 -size 33c 2> /dev/null
+</li>
+<li>cat /var/lib/dpkg/info/bandit7.password</li>
+</ul>
+
+</div>
+
+
+<p><b>Password: </b> <u>HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs</u> </p>
+   </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+   
+  </body>
+</html>
